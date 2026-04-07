@@ -1,0 +1,50 @@
+{
+  "download": {
+    "title": "다운로드 항목 선택",
+    "selectedCount": "선택항목",
+    "selectAll": "전체 선택",
+    "general": "일반 분석",
+    "advanced": "고급 분석",
+    "downloadExcel": "엑셀 다운로드",
+    "cancel": "취소",
+    "searchPlaceholder": "키워드 검색"
+  },
+  "v2v": {
+    "searchPlaceholder": "검색어를 입력하세요",
+    "search": "검색",
+    "download": "다운로드",
+    "resultCount": "검색 결과: {count}건",
+    "selectedKeywords": "선택 항목 키워드:",
+    "appliedRange": "기간",
+    "dataList": "데이터 리스트",
+    "detailPanel": "상세 정보 패널",
+    "detailEmptyTitle": "선택한 항목의 상세 제목",
+    "detailEmptyBody": "상세 내용이 여기에 표시됩니다."
+  },
+  "dateRange": {
+    "daily": "Daily",
+    "weekly": "Weekly",
+    "monthly": "Monthly",
+    "apply": "적용",
+    "selectPrompt": "기간을 선택해주세요",
+    "preset": {
+      "today": "오늘",
+      "last-day": "어제",
+      "last-7-days": "최근 7일",
+      "last-14-days": "최근 14일",
+      "last-30-days": "최근 30일",
+      "custom-date": "직접 선택",
+      "last-1-week": "이번 주",
+      "last-2-weeks": "최근 2주",
+      "last-4-weeks": "최근 4주",
+      "last-8-weeks": "최근 8주",
+      "last-12-weeks": "최근 12주",
+      "custom-date-weeks": "직접 선택",
+      "last-1-month": "이번 달",
+      "last-3-months": "최근 3개월",
+      "last-6-months": "최근 6개월",
+      "last-12-months": "최근 12개월",
+      "custom-month": "직접 선택"
+    }
+  }
+}

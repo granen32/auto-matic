@@ -1,0 +1,50 @@
+{
+  "download": {
+    "title": "Select Download Fields",
+    "selectedCount": "Selected",
+    "selectAll": "Select All",
+    "general": "General Analysis",
+    "advanced": "Advanced Analysis",
+    "downloadExcel": "Download Excel",
+    "cancel": "Cancel",
+    "searchPlaceholder": "Search keyword"
+  },
+  "v2v": {
+    "searchPlaceholder": "Enter a search term",
+    "search": "Search",
+    "download": "Download",
+    "resultCount": "Results: {count}",
+    "selectedKeywords": "Selected keywords:",
+    "appliedRange": "Range",
+    "dataList": "Data List",
+    "detailPanel": "Detail Panel",
+    "detailEmptyTitle": "Detail title of the selected item",
+    "detailEmptyBody": "Details will appear here."
+  },
+  "dateRange": {
+    "daily": "Daily",
+    "weekly": "Weekly",
+    "monthly": "Monthly",
+    "apply": "Apply",
+    "selectPrompt": "Please select a range",
+    "preset": {
+      "today": "Today",
+      "last-day": "Yesterday",
+      "last-7-days": "Last 7 days",
+      "last-14-days": "Last 14 days",
+      "last-30-days": "Last 30 days",
+      "custom-date": "Custom",
+      "last-1-week": "This week",
+      "last-2-weeks": "Last 2 weeks",
+      "last-4-weeks": "Last 4 weeks",
+      "last-8-weeks": "Last 8 weeks",
+      "last-12-weeks": "Last 12 weeks",
+      "custom-date-weeks": "Custom",
+      "last-1-month": "This month",
+      "last-3-months": "Last 3 months",
+      "last-6-months": "Last 6 months",
+      "last-12-months": "Last 12 months",
+      "custom-month": "Custom"
+    }
+  }
+}
