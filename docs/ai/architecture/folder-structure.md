@@ -1,95 +1,78 @@
 # 권장 폴더 구조
 
-이 프로젝트는 **feature-first** 구조를 우선한다. page는 진입점, feature는 실제 기능 구현 위치, shared는 정말로 공용인 것만 둔다.
+현재 프로젝트는 **feature-first** 구조를 기준으로 한다.
+실제 코드베이스는 `v2v` 단일 feature 중심으로 구성되어 있으며, 앞으로 feature가 늘어나도 같은 규칙을 유지한다.
 
 ---
 
-## 전체 구조
+## 현재 기준 구조
 
 ```txt
 src/
 ├─ app/
-│  ├─ providers/
-│  ├─ router/
-│  └─ stores/
-│
+│  ├─ app.vue
+│  └─ router/
+│     ├─ index.ts
+│     ├─ routes.ts
+│     └─ v2v.routes.ts
 ├─ pages/
-│  ├─ auth/
-│  │  └─ login-page.vue
-│  ├─ dashboard/
-│  │  └─ dashboard-page.vue
 │  └─ v2v/
 │     └─ v2v-page.vue
-│
 ├─ features/
-│  ├─ auth/
-│  │  ├─ api/
-│  │  ├─ components/
-│  │  ├─ controllers/
-│  │  ├─ stores/
-│  │  └─ types/
-│  │
-│  ├─ dashboard/
-│  │  ├─ api/
-│  │  ├─ components/
-│  │  ├─ controllers/
-│  │  ├─ lib/
-│  │  ├─ stores/
-│  │  └─ types/
-│  │
 │  └─ v2v/
 │     ├─ api/
-│     ├─ components/
 │     ├─ controllers/
-│     ├─ stores/
 │     ├─ lib/
 │     └─ types/
-│
-└─ shared/
-   ├─ api/
-   ├─ components/
-   ├─ composables/
-   ├─ constants/
-   ├─ i18n/
-   ├─ types/
-   └─ utils/
+├─ shared/
+│  ├─ components/
+│  ├─ composables/
+│  ├─ constants/
+│  ├─ i18n/
+│  ├─ types/
+│  └─ utils/
+├─ main.ts
+└─ styles.css
 ```
 
 ---
 
-## 기본 원칙
+## 역할 구분
 
-- **page** — 라우트 진입점. 레이아웃과 feature 컴포넌트 조합만 담당.
-- **feature** — 실제 기능 구현 위치. 가능하면 자급자족.
-- **shared** — 정말로 여러 feature가 공유하는 것만. 무리해서 끌어올리지 않는다.
-- 한 feature가 다른 feature 내부 파일을 직접 import하지 않는다. 공유가 필요해지면 `shared/`로 올린다.
-- 폴더명은 모두 kebab-case.
+- `app/`
+  - 앱 전역 조립 영역
+  - `app.vue`, router 설정, 추후 providers 등록 위치
+- `pages/`
+  - 라우트 진입점
+  - page shell 과 feature 조합만 담당
+- `features/`
+  - 실제 비즈니스 기능 구현 위치
+  - 현재는 `v2v` feature만 존재
+- `shared/`
+  - 여러 feature 에서 공용으로 쓰는 UI, composable, util, i18n
 
 ---
 
 ## feature 내부 권장 하위 폴더
 
+현재 `v2v` feature에는 `api / controllers / lib / types` 가 존재한다.
+기능이 커질 경우 아래 구조를 기준으로 확장한다.
+
 | 폴더 | 역할 |
 | --- | --- |
-| `api/` | 백엔드 통신 + mapper |
-| `components/` | feature 전용 표현 컴포넌트 (.vue) |
-| `controllers/` | `use-*.controller.ts` — 비즈니스 흐름 |
-| `stores/` | feature 전용 Pinia store |
-| `types/` | 도메인/응답/뷰모델 타입 |
-| `lib/` | renderer, payload builder, adapter 등 저수준 로직 |
-
-각 하위 폴더는 필요할 때만 만든다. 단순한 feature는 `components`와 `controllers`만 있어도 충분하다.
+| `api/` | 백엔드 통신, mock 응답, mapper |
+| `components/` | feature 전용 표현 컴포넌트 |
+| `controllers/` | `use-*.controller.ts` 기반 흐름 제어 |
+| `stores/` | feature 공유 상태가 생겼을 때만 사용 |
+| `types/` | feature 전용 타입 |
+| `lib/` | 순수 mapper, payload builder, adapter |
 
 ---
 
-## shared 하위 폴더
+## 현재 구조에서의 우선 원칙
 
-| 폴더 | 역할 |
-| --- | --- |
-| `api/` | 공용 fetcher / 인터셉터 |
-| `components/` | 디자인 시스템 / 공용 UI |
-| `composables/` | 공용 utility composable (`use-debounce.ts` 등) |
-| `constants/` | 전역 상수 |
-| `i18n/` | 다국어 사전 + locale composable |
-| `types/` | 공용 타입 |
-| `utils/` | 순수 함수 utility |
+- 새로운 페이지는 `pages/{feature}/{name}-page.vue` 에 둔다.
+- 새로운 기능 로직은 `features/{feature}` 내부에 둔다.
+- 공용으로 재사용되지 않는 코드는 성급하게 `shared/` 로 올리지 않는다.
+- 한 feature 가 다른 feature 내부 파일을 직접 import 하지 않는다.
+- 폴더명과 파일명은 모두 kebab-case 를 사용한다.

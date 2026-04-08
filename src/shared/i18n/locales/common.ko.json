@@ -7,7 +7,9 @@
     "advanced": "고급 분석",
     "downloadExcel": "엑셀 다운로드",
     "cancel": "취소",
-    "searchPlaceholder": "키워드 검색"
+    "searchPlaceholder": "키워드 검색",
+    "columnHeaderName": "이름",
+    "columnHeaderDescription": "설명"
   },
   "v2v": {
     "searchPlaceholder": "검색어를 입력하세요",

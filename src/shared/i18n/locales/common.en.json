@@ -7,7 +7,9 @@
     "advanced": "Advanced Analysis",
     "downloadExcel": "Download Excel",
     "cancel": "Cancel",
-    "searchPlaceholder": "Search keyword"
+    "searchPlaceholder": "Search keyword",
+    "columnHeaderName": "Name",
+    "columnHeaderDescription": "Description"
   },
   "v2v": {
     "searchPlaceholder": "Enter a search term",

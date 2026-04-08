@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(npx eslint:*)",
+      "Bash(npx vue-tsc:*)",
+      "Bash(echo \"EXIT=$?\")",
+      "Bash(npm run:*)",
+      "Read(//c/Users/Mydata/.claude/projects/C--Users-Mydata-Desktop-work-claude/**)"
+    ]
+  }
+}

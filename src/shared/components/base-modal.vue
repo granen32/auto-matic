@@ -43,7 +43,7 @@ const emit = defineEmits<{
         </div>
 
         <!-- 본문 슬롯 -->
-        <div class="flex-1 overflow-y-auto px-6 py-4">
+        <div class="flex-1 overflow-y-auto scrollbar-hide px-6 py-4">
           <slot />
         </div>
 
